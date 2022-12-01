@@ -6,7 +6,7 @@ const SocketContext = createContext();
 
 // const socket = io('http://localhost:5000');
 const socket = io('https://server-mahrez.herokuapp.com',{
-rejectUnauthorized: false 
+ca: fs.readFileSync('./cert.pem')
 });
 
 const ContextProvider = ({ children }) => {
